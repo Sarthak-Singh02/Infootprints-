@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "626660713671",
+    "project_id": "infootprints-auth",
+    "storage_bucket": "infootprints-auth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:626660713671:android:af4f7038fab3d99e278ae2",
+        "android_client_info": {
+          "package_name": "com.example.infootprints_ebook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "626660713671-96rftdo4uv9sd0497nm1oranv0lbklm2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLFurvdS5wB6sKXoZuoHXrMp-vKzx0dEI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "626660713671-96rftdo4uv9sd0497nm1oranv0lbklm2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
