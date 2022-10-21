@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:infootprints_ebook/activity/cubit/auth_cubit.dart';
+import 'package:infootprints_ebook/activity/Welcome/HomePage.dart';
 import 'package:infootprints_ebook/activity/general/SelectGeneresScreen.dart';
 import 'package:infootprints_ebook/activity/general/SplashScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:infootprints_ebook/activity/utils/SharedPrefrence.dart';
+import 'activity/Welcome/SelectedGenere.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -33,7 +36,7 @@ class MyApp extends StatelessWidget {
                 .nunitoTextTheme(), // Changes the fontstlye of text in app (app should be connected to internet for first time for changes to take place)
             scaffoldBackgroundColor: CupertinoColors.systemGrey6,
             primarySwatch: Palette.kToDark),
-        home: SelectGeneres(),
+        home: SplashScreen(),
       ),
     );
   }

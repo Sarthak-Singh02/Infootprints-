@@ -1,9 +1,19 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:infootprints_ebook/activity/utils/BottomNavBar.dart';
+import 'package:infootprints_ebook/activity/utils/CONFIG.dart';
+import 'package:infootprints_ebook/activity/utils/SharedPrefrence.dart';
 import 'package:infootprints_ebook/main.dart';
 
+import '../Welcome/HomePage.dart';
+
 class SelectGeneres extends StatefulWidget {
-  const SelectGeneres({super.key});
+  final String user_phone;
+  final String user_name;
+  const SelectGeneres(
+      {super.key, required this.user_phone, required this.user_name});
 
   @override
   State<SelectGeneres> createState() => _SelectGeneresState();
@@ -11,25 +21,36 @@ class SelectGeneres extends StatefulWidget {
 
 class _SelectGeneresState extends State<SelectGeneres> {
   List<String> reportList = [
-    "Action & Adventure",
+    "Action & Fantasy",
     "Science Fiction",
     "True Crime",
-    "Fantasy",
-    "Dystopian",
+    "Adventure",
     "Historical Fiction",
     "Horror",
     "Thriller & Suspense",
     "Romance",
     "Self-Help",
     "Mystery",
-    "Humor",
-    "Travel",
-    "Biography",
-    "Auto-Biography",
-    "Art & Photography",
-    "Food & Drink"
   ];
   List<String> selectedReportList = [];
+  registerUser(List generes) async {
+    final _fireStore = FirebaseFirestore.instance;
+    await _fireStore.collection("user_details").doc(widget.user_phone).set({
+      'name': widget.user_name,
+      'phone': widget.user_phone,
+      'generes': generes,
+    });
+    await SharePreference.setStringValue(
+        CONFIG.PHONE_NUMBER, widget.user_phone);
+    await SharePreference.setBooleanValue(CONFIG.IS_LOGIN, true);
+    Navigator.pushReplacement<void, void>(
+      context,
+      MaterialPageRoute<void>(
+        builder: (BuildContext context) => BottomNavBar(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +72,7 @@ class _SelectGeneresState extends State<SelectGeneres> {
           FittedBox(
             fit: BoxFit.scaleDown,
             child: Text(
-              "  Choose three or more favourites  ",
+              "  Choose your three favourites  ",
               style: TextStyle(
                   fontSize: 25,
                   color: CupertinoColors.systemGrey,
@@ -70,7 +91,7 @@ class _SelectGeneresState extends State<SelectGeneres> {
                   selectedReportList = selectedList;
                 });
               },
-              maxSelection: reportList.length,
+              maxSelection: 3,
             ),
           ),
         ],
@@ -79,7 +100,7 @@ class _SelectGeneresState extends State<SelectGeneres> {
         visible: selectedReportList.length >= 3 ? true : false,
         child: FloatingActionButton(
           onPressed: () {
-           
+            registerUser(selectedReportList);
           },
           child: Icon(Icons.arrow_forward_ios_rounded),
         ),
