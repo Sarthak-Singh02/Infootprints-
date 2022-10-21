@@ -11,6 +11,9 @@ FEATURES
 * Books based on choice of generes
 * Search 
 
+Connect with me on Linedin:
+https://www.linkedin.com/in/sarthak-singh-b183b1239/
+
 Screenshots
 ![WhatsApp Image 2022-10-21 at 11 19 30 AM](https://user-images.githubusercontent.com/103924916/197123494-896e9e6e-04bd-44f1-bcac-4ec97f566833.jpeg)
 ![WhatsApp Image 2022-10-21 at 11 19 31 AM (1)](https://user-images.githubusercontent.com/103924916/197123500-46c9a7ad-3b9f-428f-9286-5ec402610b56.jpeg)
