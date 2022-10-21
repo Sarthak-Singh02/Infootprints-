@@ -11,6 +11,10 @@ FEATURES
 * Books based on choice of generes
 * Search 
 
+Tech Stack
+* Flutter (State management tool - Bloc in authentication , check out more dependencies in Pubspec.yaml file)
+* Firebase (Authentiation, Cloud Firestrore, Firebase Storage)
+
 Connect with me on Linedin:
 https://www.linkedin.com/in/sarthak-singh-b183b1239/
 
