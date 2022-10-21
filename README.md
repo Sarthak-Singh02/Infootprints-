@@ -3,7 +3,7 @@ In this app you  :
 1. Register yourself with your number.
 2. Select your favourite generes.
 
-And you are done with the simple registratio !!!
+And you are done with the simple registration !!!
 
 FEATURES
 * Read E-book,
