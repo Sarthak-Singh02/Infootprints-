@@ -1,10 +1,15 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:infootprints_ebook/activity/cubit/auth_cubit.dart';
 import 'package:infootprints_ebook/activity/cubit/auth_state.dart';
+import 'package:infootprints_ebook/activity/Welcome/HomePage.dart';
 import 'package:infootprints_ebook/activity/general/UserRegistrationScreen.dart';
+import 'package:infootprints_ebook/activity/utils/BottomNavBar.dart';
+import 'package:infootprints_ebook/activity/utils/CONFIG.dart';
+import 'package:infootprints_ebook/activity/utils/SharedPrefrence.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
 
@@ -18,6 +23,32 @@ class OtpScreen extends StatefulWidget {
 class _OtpScreenState extends State<OtpScreen> {
   OtpFieldController otpFieldController = OtpFieldController();
   String otp = "";
+  GetData() async {
+    var collection = FirebaseFirestore.instance.collection('user_details');
+    var docSnapshot = await collection.doc(widget.phoneNumber).get();
+    if (docSnapshot.exists) {
+      Map<String, dynamic>? data = docSnapshot.data();
+      var value = data?['phone'];
+      await SharePreference.setStringValue(CONFIG.PHONE_NUMBER, value);
+      await SharePreference.setBooleanValue(CONFIG.IS_LOGIN, true);
+      Navigator.pushReplacement<void, void>(
+        context,
+        CupertinoPageRoute<void>(
+          builder: (BuildContext context) => BottomNavBar(),
+        ),
+      );
+    } else {
+      Navigator.pushReplacement<void, void>(
+        context,
+        CupertinoPageRoute<void>(
+          builder: (BuildContext context) => UserRegistrtaionScreen(
+            user_phone: widget.phoneNumber,
+          ),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,15 +88,12 @@ class _OtpScreenState extends State<OtpScreen> {
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             textFieldAlignment: MainAxisAlignment.spaceEvenly,
             fieldStyle: FieldStyle.underline,
-            onChanged: (value) {
-             
-            },
+            onChanged: (value) {},
             onCompleted: (value) {
               setState(() {
                 otp = value;
               });
             },
-            
           ),
           SizedBox(
             height: 20,
@@ -75,13 +103,7 @@ class _OtpScreenState extends State<OtpScreen> {
             child: BlocConsumer<AuthCubit, AuthState>(
               listener: (context, state) {
                 if (state is AuthLoggedInState) {
-                  Navigator.pushReplacement<void, void>(
-                    context,
-                    CupertinoPageRoute<void>(
-                      builder: (BuildContext context) =>
-                          UserRegistrtaionScreen(),
-                    ),
-                  );
+                  GetData();
                 } else if (state is AuthErrorState) {
                   ScaffoldMessenger.of(context)
                       .showSnackBar(SnackBar(content: Text(state.error)));

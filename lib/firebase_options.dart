@@ -54,6 +54,7 @@ class DefaultFirebaseOptions {
     appId: '1:626660713671:android:af4f7038fab3d99e278ae2',
     messagingSenderId: '626660713671',
     projectId: 'infootprints-auth',
+    databaseURL: 'https://infootprints-auth-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'infootprints-auth.appspot.com',
   );
 
@@ -62,7 +63,9 @@ class DefaultFirebaseOptions {
     appId: '1:626660713671:ios:44a2ec8340042028278ae2',
     messagingSenderId: '626660713671',
     projectId: 'infootprints-auth',
+    databaseURL: 'https://infootprints-auth-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'infootprints-auth.appspot.com',
+    androidClientId: '626660713671-fvah9966tsddbsc0qpu798js1h4toope.apps.googleusercontent.com',
     iosClientId: '626660713671-2j1i8fe10pesn4b0476eroiu7jd7a7dk.apps.googleusercontent.com',
     iosBundleId: 'com.example.infootprintsEbook',
   );

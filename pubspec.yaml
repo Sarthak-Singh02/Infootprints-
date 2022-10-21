@@ -41,6 +41,12 @@ dependencies:
   firebase_core: ^1.24.0
   firebase_auth: ^3.11.0
   flutter_bloc: ^8.1.1
+  cloud_firestore: ^3.5.1
+  shared_preferences: ^2.0.15
+  carousel_slider: ^4.1.1
+  convex_bottom_bar: ^3.1.0+1
+  firestore_search: ^0.1.9
+
 
 
 

@@ -4,8 +4,8 @@ import 'package:infootprints_ebook/activity/general/SelectGeneresScreen.dart';
 import 'package:infootprints_ebook/main.dart';
 
 class UserRegistrtaionScreen extends StatefulWidget {
-  const UserRegistrtaionScreen({super.key});
-
+  const UserRegistrtaionScreen({super.key, required this.user_phone});
+  final String user_phone;
   @override
   State<UserRegistrtaionScreen> createState() => _UserRegistrtaionScreenState();
 }
@@ -17,6 +17,7 @@ class _UserRegistrtaionScreenState extends State<UserRegistrtaionScreen> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: TextFormField(
+          maxLength: 20,
           controller: controller,
           onChanged: (value) {
             setState(() {});
@@ -84,7 +85,10 @@ class _UserRegistrtaionScreenState extends State<UserRegistrtaionScreen> {
                   Navigator.pushReplacement<void, void>(
                     context,
                     CupertinoPageRoute<void>(
-                      builder: (BuildContext context) => SelectGeneres(),
+                      builder: (BuildContext context) => SelectGeneres(
+                        user_phone: widget.user_phone,
+                        user_name: nameController.text,
+                      ),
                     ),
                   );
                 },

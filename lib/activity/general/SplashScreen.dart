@@ -4,6 +4,10 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:infootprints_ebook/activity/general/EnterLoginDetailsScreen.dart';
+import 'package:infootprints_ebook/activity/Welcome/HomePage.dart';
+import 'package:infootprints_ebook/activity/utils/BottomNavBar.dart';
+import 'package:infootprints_ebook/activity/utils/CONFIG.dart';
+import 'package:infootprints_ebook/activity/utils/SharedPrefrence.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -41,8 +45,21 @@ class _SplashScreenState extends State<SplashScreen>
 
   Future<void> endSplashScreen() async {
     Timer(Duration(seconds: 3), () async {
+      if(await SharePreference.getBooleanValue(CONFIG.IS_LOGIN) == true){
       if (mounted)
         setState(() {
+          
+          Navigator.pushReplacement<void, void>(
+            context,
+            CupertinoPageRoute<void>(
+              builder: (BuildContext context) => BottomNavBar(),
+            ),
+          );
+        });}
+        else{
+          if (mounted)
+        setState(() {
+          
           Navigator.pushReplacement<void, void>(
             context,
             CupertinoPageRoute<void>(
@@ -50,6 +67,7 @@ class _SplashScreenState extends State<SplashScreen>
             ),
           );
         });
+        }
     });
   }
 

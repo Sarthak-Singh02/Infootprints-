@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "626660713671",
+    "firebase_url": "https://infootprints-auth-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "infootprints-auth",
     "storage_bucket": "infootprints-auth.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "626660713671-fvah9966tsddbsc0qpu798js1h4toope.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.infootprints_ebook",
+            "certificate_hash": "cb2469944ef4bc3612a631b007c04c33777118a9"
+          }
+        },
         {
           "client_id": "626660713671-96rftdo4uv9sd0497nm1oranv0lbklm2.apps.googleusercontent.com",
           "client_type": 3
@@ -29,6 +38,13 @@
             {
               "client_id": "626660713671-96rftdo4uv9sd0497nm1oranv0lbklm2.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "626660713671-2j1i8fe10pesn4b0476eroiu7jd7a7dk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.infootprintsEbook"
+              }
             }
           ]
         }
