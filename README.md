@@ -6,14 +6,15 @@ And you are done with the simple registration !!!
 
 FEATURES
 
-Read E-book,
-Favorites
-Books based on the choice of genres
-Search
-Tech Stack
+* Read E-book,
+* Favorites
+* Books based on the choice of genres
+* Search
+* Tech Stack
 
-Flutter (State management tool - Bloc in authentication, check out more dependencies in Pubspec. YAML file)
-Firebase (Authentication, Cloud Firestrore, Firebase Storage)
+* Flutter (State management tool - Bloc in authentication, check out more dependencies in Pubspec. YAML file)
+* Firebase (Authentication, Cloud Firestrore, Firebase Storage).
+
 Connect with me on LinkedIn: https://www.linkedin.com/in/sarthak-singh-b183b1239/
 
 Screenshots
