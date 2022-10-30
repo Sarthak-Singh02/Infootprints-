@@ -1,22 +1,20 @@
-InFootprints is an E-Book app made with flutter and backend is developed with firebase.
-In this app you  :
-1. Register yourself with your number.
-2. Select your favourite generes.
+InFootprints is an E-Book app made with flutter and the backend is developed with firebase. In this app you :
 
+Register yourself with your number.
+Select your favorite genres.
 And you are done with the simple registration !!!
 
 FEATURES
-* Read E-book,
-* Favourites
-* Books based on choice of generes
-* Search 
 
+Read E-book,
+Favorites
+Books based on the choice of genres
+Search
 Tech Stack
-* Flutter (State management tool - Bloc in authentication , check out more dependencies in Pubspec.yaml file)
-* Firebase (Authentiation, Cloud Firestrore, Firebase Storage)
 
-Connect with me on Linedin:
-https://www.linkedin.com/in/sarthak-singh-b183b1239/
+Flutter (State management tool - Bloc in authentication, check out more dependencies in Pubspec. YAML file)
+Firebase (Authentication, Cloud Firestrore, Firebase Storage)
+Connect with me on LinkedIn: https://www.linkedin.com/in/sarthak-singh-b183b1239/
 
 Screenshots
 ![WhatsApp Image 2022-10-21 at 11 19 30 AM](https://user-images.githubusercontent.com/103924916/197123494-896e9e6e-04bd-44f1-bcac-4ec97f566833.jpeg)
